@@ -13,7 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +22,11 @@ public class Book {
     private double price;
     private int stock;
 
+    public Book(Long id, String title, String author, double price, int stock) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.stock = stock;
+    }
 }
